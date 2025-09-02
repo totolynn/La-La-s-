@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Là-Ls' Suites Fully Furnished Suites - Luxury Redefined</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --midnight-blue: #0a1128;
+            --navy-blue: #0a1a3a;
+            --royal-blue: #1a2b5a;
+            --gold: #d4af37;
+            --light-gold: #f5e6c0;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        
+        /* Sparkle Animation */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: sparkle 1.5s ease-out;
+            z-index: 999;
+        }
+        
+        @keyframes sparkle {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Splash Screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--midnight-blue) 0%, var(--navy-blue) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            transition: var(--transition);
+        }
+        
+        .logo-animation {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin-bottom: 30px;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .logo-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 4px solid var(--gold);
+            border-radius: 50%;
+            animation: pulse 4s infinite alternate;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+        }
+        
+        .logo-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+        
+        #splash-motto {
+            font-size: 2rem;
+            font-style: italic;
+            margin-top: 40px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+            letter-spacing: 2px;
+        }
+        
+        .spinner {
+            color: var(--light-gold);
+            margin-top: 60px;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1.5s;
+            font-size: 2.5rem;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            50% { transform: scale(1.05); }
+            70% { box-shadow: 0 0 0 40px rgba(212, 175, 55, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Main Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--midnight-blue);
+            color: var(--light-gold);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--midnight-blue) 0%, var(--navy-blue) 100%);
+            color: var(--white);
+            padding: 25px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 40px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+            background: rgba(10, 17, 40, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .logo:hover {
+            transform: scale(1.03);
+        }
+        
+        .logo-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--midnight-blue);
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 5px 25px rgba(212, 175, 55, 0.5);
+            transition: var(--transition);
+        }
+        
+        .logo:hover .logo-icon {
+            transform: rotate(15deg);
+            box-shadow: 0 7px 30px rgba(212, 175, 55, 0.7);
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo-text span {
+            color: var(--gold);
+        }
+        
+        .logo-motto {
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-top: 5px;
+            color: var(--light-gold);
+            letter-spacing: 1.5px;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--light-gold);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 10px 0;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        nav ul li a i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 900px;
+            background: url('https://lh3.googleusercontent.com/p/AF1QipPk5xhdBfUsSpqzzX4rVqb3BPD2QL00MjqRLmfS=s680-w680-h510-rw') no-repeat center center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(10, 17, 40, 0.85) 0%, rgba(10, 17, 40, 0.5) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+            max-width: 800px;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: slideUp 1s forwards 0.5s;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            text-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+        
+        .hero h1 span {
+            color: var(--gold);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero h1 span:after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background-color: rgba(212, 175, 55, 0.3);
+            z-index: -1;
+            transform: skewY(-2deg);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            line-height: 1.8;
+            color: var(--light-gold);
+            max-width: 700px;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background-color: var(--gold);
+            color: var(--midnight-blue);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: 2px solid var(--gold);
+            box-shadow: 0 5px 30px rgba(212, 175, 55, 0.5);
+            position: relative;
+            overflow: hidden;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--gold);
+            box-shadow: 0 8px 40px rgba(212, 175, 55, 0.7);
+            transform: translateY(-5px);
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover:before {
+            left: 100%;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gold);
+            margin-left: 25px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--midnight-blue);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 150px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+        
+        .section-title.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--light-gold);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background-color: var(--gold);
+            border-radius: 2px;
+            box-shadow: 0 2px 15px rgba(212, 175, 55, 0.5);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background: linear-gradient(135deg, var(--midnight-blue) 0%, var(--navy-blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23d4af37" opacity="0.03" width="2" height="2" x="50" y="50"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+        
+        .gallery-container.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            aspect-ratio: 1/1;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .gallery-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 17, 40, 0.7) 0%, transparent 50%);
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover:before {
+            opacity: 1;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(10, 17, 40, 0.9) 0%, transparent 100%);
+            color: var(--light-gold);
+            z-index: 2;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            bottom: 0;
+        }
+        
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+        .rules-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.rules-category {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: var(--transition);
+}
+
+.rules-category:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.rules-category h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.rules-category h3 i {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.rules-category ul {
+    list-style: none;
+}
+
+.rules-category li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    color: var(--light-gold);
+}
+
+.rules-category li:before {
+    content: '•';
+    color: var(--gold);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, var(--navy-blue) 0%, var(--royal-blue) 100%);
+            position: relative;
+        }
+        
+        .testimonials:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23d4af37" opacity="0.05" width="3" height="3" x="50" y="50"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+        
+        .testimonial-grid.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        
+        .testimonial-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, transparent 100%);
+            z-index: -1;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--light-gold);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial-text:before,
+        .testimonial-text:after {
+            content: '"';
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.2;
+            position: absolute;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+        
+        .testimonial-text:before {
+            top: -20px;
+            left: -15px;
+        }
+        
+        .testimonial-text:after {
+            bottom: -60px;
+            right: -15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--midnight-blue);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .testimonial-card:hover .author-avatar {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .author-info p {
+            color: rgba(245, 230, 192, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: var(--gold);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+        
+        /* Booking Section */
+        #book-now {
+            background: linear-gradient(135deg, var(--midnight-blue) 0%, var(--navy-blue) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #book-now:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23d4af37" opacity="0.05" width="2" height="2" x="50" y="50"/></svg>');
+            background-size: 80px 80px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        #book-now .section-title h2 {
+            color: var(--light-gold);
+        }
+        
+        #book-now .section-title h2:after {
+            background-color: var(--gold);
+        }
+        
+        .booking-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+        
+        .booking-form.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .booking-form:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            flex: 1;
+            margin-bottom: 0;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--light-gold);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--light-gold);
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .form-control.error {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37' stroke='%23d4af37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 1em;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background-color: var(--gold);
+            color: var(--midnight-blue);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 25px rgba(212, 175, 55, 0.4);
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 35px rgba(212, 175, 55, 0.6);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--midnight-blue) 0%, var(--navy-blue) 100%);
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23d4af37" opacity="0.03" width="2" height="2" x="50" y="50"/></svg>');
+            background-size: 60px 60px;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            opacity: 0.8;
+            color: var(--light-gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--light-gold);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition);
+            display: inline-block;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .footer-links a:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 1px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+            padding-left: 25px;
+        }
+        
+        .footer-links a:hover:before {
+            width: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--gold);
+            border-radius: 50%;
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .social-link:hover {
+            background-color: var(--gold);
+            color: var(--midnight-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            border-color: transparent;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            .section-title h2 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero {
+                min-height: 800px;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .section {
+                padding: 100px 0;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 15px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 15px 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .booking-form {
+                padding: 30px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Sparkle Cursor Effect */
+        .sparkle-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgba(212, 175, 55, 0.3);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            mix-blend-mode: screen;
+            transition: transform 0.1s ease;
+        }
+        
+        /* Additional Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .zoom-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .rotate-in {
+            opacity: 0;
+            transform: rotate(-10deg);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .rotate-in.visible {
+            opacity: 1;
+            transform: rotate(0);
+        }
+        
+        .bounce-in {
+            opacity: 0;
+            transform: scale(0.3);
+            transition: opacity 1s ease, transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .bounce-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .spin {
+            animation: spin 10s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 7% { transform: rotateZ(0); }
+            15% { transform: rotateZ(-5deg); }
+            20% { transform: rotateZ(4deg); }
+            25% { transform: rotateZ(-4deg); }
+            30% { transform: rotateZ(3deg); }
+            35% { transform: rotateZ(-2deg); }
+            40%, 100% { transform: rotateZ(0); }
+        }
+        
+        .location-info {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+        
+        .location-info:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+        
+        .location-info h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .location-info p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .contact-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-10px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            color: var(--midnight-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        .contact-item h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .contact-item p, .contact-item a {
+            color: var(--light-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-item a:hover {
+            color: var(--gold);
+        }
+        
+        .designer-credit {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--light-gold);
+            opacity: 0.7;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sparkle Cursor -->
+    <div class="sparkle-cursor"></div>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="logo-animation">
+            <div class="logo-circle"></div>
+            <div class="logo-inner">🏠</div>
+        </div>
+        <div id="splash-motto">A Home Away From Home</div>
+        <div class="spinner">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </div>
+    </div>
+
+    <!-- Main Website Content -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">🏠</div>
+                <div>
+                    <div class="logo-text">Là-<span>Ls'</span> Suites</div>
+                    <div class="logo-motto">Fully Furnished Suites</div>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-star"></i> Testimonials</a></li>
+                    <li><a href="#book-now"><i class="fas fa-calendar-check"></i> Book Now</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="#rules"><i class="fas fa-clipboard-list"></i> Rules</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Experience Luxury at <span>Là-Ls' Suites</span></h1>
+                <p>Discover unparalleled comfort and elegance in the heart of Kampala. Our fully furnished suites are designed to provide you with a truly memorable stay that feels just like home.</p>
+                <div class="hero-buttons">
+                    <a href="#gallery" class="btn">View Gallery</a>
+                    <a href="#book-now" class="btn btn-outline">Book Your Stay</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Luxury Gallery</h2>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipOZxUL29ZsX74E3WFMljB9sZsvQzOD4ctZ56D93=s680-w680-h510-rw" alt="Luxurious 3 stooried Building" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Our Luxurious Suites</h3>
+                        <p>Experience our Lovely Luxurious Suites</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipNRn2ARREBAPTwJOhLC0jMiy96QWzKv2pzxZIN0=s680-w680-h510-rw" alt="Fantastic Bathroom" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Living Room</h3>
+                        <p>Relax in our comfortable Living Room</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipNM7DeoCnNkejkSLrrZly64c0zTzpLIdMe0DlV2=s680-w680-h510-rw" alt="Luxury Bathroom" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Fantastic Bathroom</h3>
+                        <p>Enjoy A Full Beautiful Bathroom</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipNQNAnJEdSXPZKAli27WslNnpHIydXMKYawlLyy=s680-w680-h510-rw" alt="Bedroom" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Luxury Bedroom</h3>
+                        <p>Sleep in ultimate comfort with premium bedding</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipNrvZEUoXX3c5agKUDrqGOY7TjdfhuOst4k6V65=s680-w680-h510-rw" alt="Fabulous Kitchen" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Fabulous Kitchen</h3>
+                        <p>Feel At Home with our fabulous fully equipped kitchen</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipNAzrAlH1zpmNV15L4sd99CwvjLTzcFum277mwE=s680-w680-h510-rw" alt="Lobby" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Grand Lobby</h3>
+                        <p>Our elegant lobby welcomes you in style</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="location-info fade-in">
+                <h3><i class="fas fa-map-marker-alt"></i> Our Location</h3>
+                <p>Là-Ls' Suites is set in Kampala, 10 km from Pope Paul Memorial, 10 km from Kasubi Royal Tombs, as well as 12 km from Saint Paul's Cathedral Namirembe. This property offers access to a balcony and free private parking. The property is non-smoking and is located 10 km from Rubaga Cathedral.</p>
+                <p>Providing a terrace, this apartment also provides guests with a flat-screen TV, a fully equipped kitchen and 1 bathroom.</p>
+                <p>Gaddafi National Mosque is 13 km from the apartment, while Fort Lugard Museum is 13 km away. The nearest airport is Entebbe International Airport, 41 km from Là-Ls' Suites.</p>
+                <p><strong>Address:</strong> Bulaga, Ku Mwenda, along Kampala Mityana Road, Kampala</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Guest Experiences</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>My stay at Là-Ls' Suites was absolutely perfect. The attention to detail and level of service exceeded all my expectations. The bed was incredibly comfortable, and the views were breathtaking. I can't wait to return!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            SJ
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Frequent Traveler</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>The epitome of luxury! From the moment we arrived, the staff made us feel like royalty. The suite was immaculate, with every amenity we could imagine. The spa services were exceptional - truly a home away from home.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            MC
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Business Executive</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>We celebrated our anniversary at Là-Ls' Suites and it was magical. The staff arranged rose petals and champagne in our room. The attention to detail was incredible - they even remembered our preferred pillow types from a previous stay!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            ER
+                        </div>
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <p>Anniversary Guest</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="book-now">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book Your Stay</h2>
+            </div>
+            <form class="booking-form" action="process-booking.php" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="check-in">Check-In Date</label>
+                        <input type="date" id="check-in" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="check-out">Check-Out Date</label>
+                        <input type="date" id="check-out" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" class="form-control" required>
+                            <option value="1">1 Guest</option>
+                            <option value="2" selected>2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="room-type">Suite Preference</label>
+                        <select id="room-type" class="form-control" required>
+                            <option value="">Select Suite Type</option>
+                            <option value="Second Floor">Second Floor Suite</option>
+                            <option value="First Floor">First Floor</option>
+                            <option value="Ground Floor">Ground Floor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="special-requests">Special Requests</label>
+                    <textarea id="special-requests" class="form-control" rows="4" placeholder="Let us know how we can make your stay exceptional"></textarea>
+                </div>
+                <a href="https://mail.google.com/mail/u/0/#inbox"><button type="submit" class="submit-btn">Reserve Your Suite</button></a>
+            </form>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div class="contact-details">
+                <div class="contact-item zoom-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Address</h4>
+                    <p>Bulaga, Ku Mwenda<br>along Kampala Mityana Road<br>Kampala, Uganda</p>
+                </div>
+                
+                <div class="contact-item zoom-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Phone</h4>
+                    <p><a href="tel:+256761713323">+256 761 713 323</a></p>
+                    <p><a href="tel:+256753079669">+256 753 079 669</a></p>
+                </div>
+                
+                <div class="contact-item zoom-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <p><a href="mailto:la.lssuites@gmail.com">la.lssuites@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="section" id="rules">
+    <div class="container">
+        <div class="section-title">
+            <h2>House Rules & Policies</h2>
+        </div>
+        <div class="rules-content">
+            <div class="rules-category">
+                <h3><i class="fas fa-door-open"></i> Check-in/Check-out</h3>
+                <ul>
+                    <li>Check-in time: 2:00 PM</li>
+                    <li>Check-out time: 11:00 AM</li>
+                    <li>Early check-in and late check-out subject to availability</li>
+                </ul>
+            </div>
+            
+            <div class="rules-category">
+                <h3><i class="fas fa-ban"></i> Restrictions</h3>
+                <ul>
+                    <li>No smoking in rooms (designated areas available)</li>
+                    <li>No pets allowed</li>
+                    <li>No parties or events without prior approval</li>
+                </ul>
+            </div>
+            
+            <div class="rules-category">
+                <h3><i class="fas fa-credit-card"></i> Payment & Cancellation</h3>
+                <ul>
+                    <li>50% deposit required to confirm booking</li>
+                    <li>Free cancellation up to 7 days before arrival</li>
+                    <li>50% refund for cancellations within 3-7 days of arrival</li>
+                    <li>No refund for cancellations within 48 hours of arrival</li>
+                </ul>
+            </div>
+            
+            <div class="rules-category">
+                <h3><i class="fas fa-info-circle"></i> General Policies</h3>
+                <ul>
+                    <li>Valid ID required at check-in</li>
+                    <li>Damage to property will be charged accordingly</li>
+                    <li>Quiet hours: 10:00 PM to 7:00 AM</li>
+                    <li>Additional guests must be registered</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Là-Ls' Suites</h3>
+                    <p>Fully Furnished Suites. Experience unparalleled luxury and comfort in the heart of Kampala.</p>
+                    <p>Our suites are designed to provide you with a truly memorable stay that feels just like home.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#book-now">Book Now</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#rules">Rules & Policies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Bulaga, Ku Mwenda, Kampala Mityana Road</p>
+                    <p><i class="fas fa-phone-alt"></i> +256 761 713 323</p>
+                    <p><i class="fas fa-phone-alt"></i> +256 753 079 669</p>
+                    <p><i class="fas fa-envelope"></i> la.lssuites@gmail.com</p>
+                </div>
+            </div>
+            <div class="designer-credit">
+                <p>&copy; 2025 Là-Ls' Suites. All Rights Reserved. | Designed by Lynard Muhindo</p>
+            </div>
+        </div>
+    </footer>
+<script>
+    // DOM Ready Function
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeWebsite();
+    });
+
+    // Main Initialization Function
+    function initializeWebsite() {
+        // Initialize splash screen
+        initSplashScreen();
+        
+        // Initialize scroll effects
+        initScrollEffects();
+        
+        // Initialize smooth scrolling
+        initSmoothScrolling();
+        
+        // Initialize booking form
+        initBookingForm();
+        
+        // Initialize cursor effects
+        initCursorEffects();
+        
+        // Initialize animations
+        initAnimations();
+        
+        // Initialize intersection observer
+        initIntersectionObserver();
+    }
+
+    // Splash Screen Functionality
+    function initSplashScreen() {
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const splashScreen = document.getElementById('splash-screen');
+                if (splashScreen) {
+                    splashScreen.style.opacity = '0';
+                    setTimeout(function() {
+                        splashScreen.style.display = 'none';
+                    }, 1000);
+                }
+            }, 3500);
+        });
+    }
+
+    // Scroll Effects
+    function initScrollEffects() {
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (header && window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else if (header) {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // Smooth Scrolling for Navigation
+    function initSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without jumping
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+    }
+
+    // Booking Form Functionality
+    function initBookingForm() {
+        const bookingForm = document.querySelector('.booking-form');
+        if (bookingForm) {
+            // Set minimum dates for check-in/check-out
+            const today = new Date().toISOString().split('T')[0];
+            const checkIn = document.getElementById('check-in');
+            const checkOut = document.getElementById('check-out');
+            
+            if (checkIn) checkIn.min = today;
+            if (checkOut) checkOut.min = today;
+            
+            // Update check-out min date when check-in changes
+            if (checkIn && checkOut) {
+                checkIn.addEventListener('change', function() {
+                    checkOut.min = this.value;
+                });
+            }
+            
+            // Form validation
+            bookingForm.addEventListener('submit', function(e) {
+                if (!validateBookingForm()) {
+                    e.preventDefault();
+                }
+            });
+        }
+    }
+
+    // Booking Form Validation
+    function validateBookingForm() {
+        const checkIn = document.getElementById('check-in');
+        const checkOut = document.getElementById('check-out');
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const roomType = document.getElementById('room-type');
+        
+        let isValid = true;
+        
+        // Clear previous error messages
+        clearErrorMessages();
+        
+        // Validate dates
+        if (checkIn && checkOut) {
+            if (new Date(checkOut.value) <= new Date(checkIn.value)) {
+                showError(checkOut, 'Check-out date must be after check-in date');
+                isValid = false;
+            }
+        }
+        
+        // Validate name
+        if (name && !name.value.trim()) {
+            showError(name, 'Please enter your full name');
+            isValid = false;
+        }
+        
+        // Validate email
+        if (email && !isValidEmail(email.value)) {
+            showError(email, 'Please enter a valid email address');
+            isValid = false;
+        }
+        
+        // Validate room type
+        if (roomType && !roomType.value) {
+            showError(roomType, 'Please select a suite type');
+            isValid = false;
+        }
+        
+        return isValid;
+    }
+
+    // Email Validation Helper
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // Show Error Message
+    function showError(input, message) {
+        // Remove any existing error
+        const existingError = input.parentNode.querySelector('.error-message');
+        if (existingError) {
+            existingError.remove();
+        }
+        
+        // Add error class to input
+        input.classList.add('error');
+        
+        // Create and display error message
+        const errorElement = document.createElement('div');
+        errorElement.className = 'error-message';
+        errorElement.style.color = '#ff6b6b';
+        errorElement.style.fontSize = '0.9rem';
+        errorElement.style.marginTop = '5px';
+        errorElement.textContent = message;
+        
+        input.parentNode.appendChild(errorElement);
+    }
+
+    // Clear Error Messages
+    function clearErrorMessages() {
+        document.querySelectorAll('.error-message').forEach(el => el.remove());
+        document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    }
+
+    // Cursor Effects
+    function initCursorEffects() {
+        const cursor = document.querySelector('.sparkle-cursor');
+        if (cursor) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+        }
+        
+        // Sparkle animation on click
+        document.addEventListener('click', (e) => {
+            createSparkle(e.clientX, e.clientY);
+        });
+        
+        // Gold sparkles on elements with data-sparkle attribute
+        document.querySelectorAll('[data-sparkle]').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                const rect = element.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        createSparkle(
+                            centerX + (Math.random() - 0.5) * 50,
+                            centerY + (Math.random() - 0.5) * 50,
+                            i * 0.1
+                        );
+                    }, i * 100);
+                }
+            });
+        });
+    }
+
+    // Create Sparkle Animation
+    function createSparkle(x, y, delay = 0) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = x + 'px';
+        sparkle.style.top = y + 'px';
+        sparkle.style.animationDelay = delay + 's';
+        document.body.appendChild(sparkle);
+        
+        // Remove sparkle after animation completes
+        setTimeout(() => {
+            if (sparkle.parentNode) {
+                sparkle.parentNode.removeChild(sparkle);
+            }
+        }, 1500);
+    }
+
+    // Initialize Animations
+    function initAnimations() {
+        addAnimationClasses();
+    }
+
+    // Add Animation Classes to Elements
+    function addAnimationClasses() {
+        const elements = document.querySelectorAll('.contact-item, .gallery-item, .testimonial-card, .rules-category');
+        elements.forEach((element, index) => {
+            element.classList.add('fade-in');
+            element.style.transitionDelay = `${index * 0.1}s`;
+        });
+    }
+
+    // Intersection Observer for Scroll Animations
+    function initIntersectionObserver() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements that need animation
+        document.querySelectorAll('.section-title, .gallery-container, .testimonial-grid, .booking-form, .fade-in, .slide-in-left, .slide-in-right, .zoom-in, .rotate-in, .bounce-in').forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Force visible elements to show on load
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.gallery-container, .testimonial-grid').forEach(element => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    element.classList.add('in-view');
+                }
+            });
+        });
+    }
+
+    // Utility function for debouncing (for performance)
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+</script>
+</body>
+</html>
